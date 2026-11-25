@@ -19,7 +19,7 @@ double atlag = adatok.Average(x => x.BereltOrak);
 Console.WriteLine( $"Átlagos kölcsönzési idő: {atlag:F0} óra");
 Kolcsonzes leg = adatok.MaxBy(x=>x.FizetendoOsszeg());
 Console.WriteLine($"Legtöbbet fizető bérlő: {leg.BerloNev} ({leg.FizetendoOsszeg()} Ft)");
-int szamol = adatok.Count(x => x.HajoTipus == "KENU" && x.KesesPerc <= 15);
+int szamol = adatok.Count(x => x.HajoTipus == "KENU" && x.KesesPerc == 0);
 Console.WriteLine($"Késés nélkül visszahozott KENU kölcsönzések száma: {szamol} db");
 
 Console.WriteLine("\nKésedelmi pótdíjat fizető bérlők:");
