@@ -25,6 +25,7 @@ namespace KajakKolcsonzo
         public int FizetendoOsszeg()
         {
             int ossz = 0;
+            int oss2 = 0;
             if (HajoTipus == "KAJAK")
             {
                 ossz = 2500 * BereltOrak;
@@ -35,13 +36,15 @@ namespace KajakKolcsonzo
             }
             if (MentoMellenyek >= 2)
             {
-                ossz += 500;
+                oss2=500*MentoMellenyek-500;
             }
-            if (KesesPerc <= 15)
+            if (KesesPerc > 15)
             {
-                ossz += 3000;
+                oss2+=3000;
             }
-            return ossz;
+            int oss3 = 0;
+            oss3 = ossz + oss2;
+            return oss3;
         }
 
         public override string ToString()
